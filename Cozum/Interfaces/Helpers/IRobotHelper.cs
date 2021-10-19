@@ -13,6 +13,6 @@ namespace Cozum.Interfaces.Helpers
         Robot CreateRobot(int xPosition, int yPosition, string Direction);
         string RobotPlatoWalk();
         void RobotFinalPosition(Robot robot, string commandToRobot);
-
+        void WriteRobotsToConsole(List<Robot> robots);
     }
 }

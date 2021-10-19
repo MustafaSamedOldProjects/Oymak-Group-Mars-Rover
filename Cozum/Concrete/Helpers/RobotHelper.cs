@@ -109,5 +109,13 @@ namespace Cozum.Concrete.Helpers
                 }
             }
         }
+
+        public void WriteRobotsToConsole(List<Robot> robots)
+        {
+            foreach (var item in robots)
+            {
+                Console.WriteLine(item.xPosition + " " + item.yPosition + " " + item.Direction);              
+            }
+        }
     }
 }
