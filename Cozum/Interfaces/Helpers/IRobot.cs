@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cozum.Interfaces.Helpers
 {
-    public interface Robot
+    public interface IRobot
     {
     }
 }
