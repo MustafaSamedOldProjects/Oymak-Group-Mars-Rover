@@ -45,8 +45,6 @@ namespace CozumUnitTest
                 Direction = direction
             }, command);
             Assert.Equal(robot.Direction, direction);
-            //Assert.Equal(robot.xPosition, xPosition);
-            //Assert.Equal(robot.yPosition, yPosition);
 
         }
     }
