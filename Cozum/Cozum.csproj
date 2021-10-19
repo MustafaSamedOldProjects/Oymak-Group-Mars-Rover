@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Concrete\Models\" />
     <Folder Include="Concrete\Helpers\" />
     <Folder Include="Interfaces\Helpers\" />
   </ItemGroup>
