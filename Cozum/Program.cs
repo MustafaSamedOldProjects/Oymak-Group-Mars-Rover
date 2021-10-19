@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Cozum.Concrete.Models;
+using Cozum.Interfaces.Helpers;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Cozum
 {
@@ -6,7 +9,13 @@ namespace Cozum
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ServiceProvider serviceProvider = new ServiceCollection()
+                                           .AddScoped<IRobot, Robot>()
+                                           .AddScoped<ICordinate, Cordinate>()
+                                           .BuildServiceProvider();
+
+
+            Console.Read();
         }
     }
 }
