@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 namespace Cozum
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             ServiceProvider serviceProvider = new ServiceCollection()
                                            .AddScoped<ICordinateHelper, CordinateHelper>()
