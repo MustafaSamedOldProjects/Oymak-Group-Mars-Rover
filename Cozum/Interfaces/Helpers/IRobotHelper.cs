@@ -12,7 +12,7 @@ namespace Cozum.Interfaces.Helpers
         Tuple<int, int, string> GetRobotPosition();
         Robot CreateRobot(int xPosition, int yPosition, string Direction);
         string RobotPlatoWalk();
-        void RobotFinalPosition(Robot robot, string commandToRobot);
+        Robot RobotFinalPosition(Robot robot, string commandToRobot);
         void WriteRobotsToConsole(List<Robot> robots);
     }
 }

@@ -45,7 +45,7 @@ namespace Cozum.Concrete.Helpers
             return commandToRobot;
         }
 
-        public void RobotFinalPosition(Robot robot, string commandToRobot)
+        public Robot RobotFinalPosition(Robot robot, string commandToRobot)
         {
             char[] commands = commandToRobot.ToCharArray();
             for (int i = 0; i < commands.Length; i++)
@@ -108,6 +108,7 @@ namespace Cozum.Concrete.Helpers
                     }
                 }
             }
+            return robot;
         }
 
         public void WriteRobotsToConsole(List<Robot> robots)
