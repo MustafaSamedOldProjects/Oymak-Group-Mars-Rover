@@ -29,9 +29,10 @@ namespace Cozum.Concrete.Helpers
         {
             List<Cordinate> rectangleCordinate = new List<Cordinate>();
 
-            for (int x = xLength; x >= 0; x--)
+
+            for (int y = yLength; y >= 0; y--)
             {
-                for (int y = 0; y <= yLength; y++)
+                for (int x = 0; x <= xLength; x++)
                 {
                     rectangleCordinate.Add(new Cordinate()
                     {
@@ -46,7 +47,22 @@ namespace Cozum.Concrete.Helpers
 
         public void ShowCordinateSystemInConsole(List<Cordinate> rectangleCordinate)
         {
-            throw new NotImplementedException();
+            int temp = rectangleCordinate.FirstOrDefault().cordinateX;
+
+            foreach (var item in rectangleCordinate)
+            {
+                if (temp != item.cordinateX)
+                {
+                    Console.Write("(" + item.cordinateX + "," + item.cordinateY + ") ");
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.Write("(" + item.cordinateX + "," + item.cordinateY + ") ");
+                    temp = item.cordinateX;
+                }
+            }
+            Console.WriteLine();
         }
     }
 }

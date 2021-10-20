@@ -19,7 +19,7 @@ namespace Cozum
             ICordinateHelper cordinateHelper = serviceProvider.GetService<ICordinateHelper>();
             Tuple<int, int> cordinates = cordinateHelper.GetValuesFromUserForCordinateSystem();
             List<Cordinate> rectangleCordinate = cordinateHelper.CreateCordinateSystem(cordinates.Item1, cordinates.Item2);
-            
+            cordinateHelper.ShowCordinateSystemInConsole(rectangleCordinate);
             IRobotHelper robotHelper = serviceProvider.GetService<IRobotHelper>();
             string exitStatus = "";
 
