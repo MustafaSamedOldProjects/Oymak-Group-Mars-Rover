@@ -28,5 +28,19 @@ namespace CozumUnitTest
 
             Assert.Equal(values.Count,(xLength+1)*(yLength+1));
         }
+        
+
+        [Theory]
+        [InlineData("5 5")]
+        [InlineData("6 6")]
+        [InlineData("3 5")]
+        public void Test_For_GetValuesFromUserForCordinateSystem(string cordinateInput)
+        {
+            string[] cordinates = cordinateInput.Trim().Split(" ");
+            Tuple<int,int> values = _cordinateHelper.GetValuesFromUserForCordinateSystem(cordinateInput);
+
+            Assert.Equal(values.Item1, Convert.ToInt32(cordinates[0]));
+            Assert.Equal(values.Item2, Convert.ToInt32(cordinates[1]));
+        }
     }
 }
