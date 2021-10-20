@@ -10,20 +10,11 @@ namespace Cozum.Concrete.Helpers
 {
     public class RobotHelper : IRobotHelper
     {
-        public Tuple<int, int, string> GetRobotPosition()
+        public Tuple<int, int, string> GetRobotPosition(string input)
         {
-
-            Console.WriteLine("Robot'un x,y ve yönünü(E,W,N,S) girin.");
-            string robotInformation = Console.ReadLine();
-            if (robotInformation == "-1")
-            {
-                return Tuple.Create(-1, -1, "-1");
-            }
-            string inputReadable = robotInformation.Replace(" ", "");
-
-            int xPosition = Convert.ToInt32(inputReadable.Substring(0, 1));
-            int yPosition = Convert.ToInt32(inputReadable.Substring(1, 1));
-            string Direction = inputReadable.ToUpper().Substring(2, 1);
+            int xPosition = Convert.ToInt32(input.Substring(0, 1));
+            int yPosition = Convert.ToInt32(input.Substring(1, 1));
+            string Direction = input.ToUpper().Substring(2, 1);
             return Tuple.Create(xPosition, yPosition, Direction);
         }
 
@@ -38,11 +29,9 @@ namespace Cozum.Concrete.Helpers
             return robot;
         }
 
-        public string RobotPlatoWalk()
+        public string RobotPlatoWalk(string input)
         {
-            Console.WriteLine("Robot'un gideceği yönü R,L,M şeklinde belirtiniz.");
-            string commandToRobot = Console.ReadLine().ToUpper();
-            return commandToRobot;
+            return input;
         }
 
         public Robot RobotFinalPosition(Robot robot, string commandToRobot)
