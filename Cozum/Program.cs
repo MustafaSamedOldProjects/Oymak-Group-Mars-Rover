@@ -23,6 +23,7 @@ namespace Cozum
             consoleHelper.WriteMessageToConsole("Lütfen Bir Dikdörtgen Giriniz");
             string inputCordinate = consoleHelper.ReadFromConsoleForPlato();
             Tuple<int, int> cordinates = cordinateHelper.GetValuesFromUserForCordinateSystem(inputCordinate);
+            consoleHelper.WriteMessageToConsole("Plato aşağıdaki gibidir.");
             List<Cordinate> rectangleCordinate = cordinateHelper.CreateCordinateSystem(cordinates.Item1, cordinates.Item2);
             cordinateHelper.ShowCordinateSystemInConsole(rectangleCordinate);
             
@@ -33,7 +34,7 @@ namespace Cozum
             List<Robot> robots = new List<Robot>();
             while (exitStatus != "-1")
             {
-                consoleHelper.WriteMessageToConsole("Robot'un x,y ve yönünü(E,W,N,S) girin.");
+                consoleHelper.WriteMessageToConsole("Robot'un x,y ve yönünü(E,W,N,S) girin. Örneğin : 1 2 N");
                 string inputRobotPosition = consoleHelper.ReadFromConsole();
                 Tuple<int, int, string> robotPosition = robotHelper.GetRobotPosition(inputRobotPosition);
                 var createdRobot = robotHelper.CreateRobot(robotPosition.Item1, robotPosition.Item2, robotPosition.Item3);
