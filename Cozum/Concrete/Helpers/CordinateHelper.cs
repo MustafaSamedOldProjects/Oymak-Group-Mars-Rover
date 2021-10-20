@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Cozum.Concrete.Helpers
 {
     public class CordinateHelper : ICordinateHelper
-    {
+    {        
         public Tuple<int, int> GetValuesFromUserForCordinateSystem(string cordinateSystem)
         {
             string[] cordinates = cordinateSystem.Trim().Split(" ");
