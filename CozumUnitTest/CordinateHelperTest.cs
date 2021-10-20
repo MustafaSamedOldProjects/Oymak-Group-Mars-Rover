@@ -26,7 +26,7 @@ namespace CozumUnitTest
 
             List<Cordinate> values =  _cordinateHelper.CreateCordinateSystem(xLength,yLength);
 
-            Assert.Equal(values.Count,(xLength+1)*(yLength+1));
+            Assert.Equal((xLength + 1) * (yLength + 1), values.Count);
         }
         
 
@@ -39,8 +39,8 @@ namespace CozumUnitTest
             string[] cordinates = cordinateInput.Trim().Split(" ");
             Tuple<int,int> values = _cordinateHelper.GetValuesFromUserForCordinateSystem(cordinateInput);
 
-            Assert.Equal(values.Item1, Convert.ToInt32(cordinates[0]));
-            Assert.Equal(values.Item2, Convert.ToInt32(cordinates[1]));
+            Assert.Equal(Convert.ToInt32(cordinates[0]), values.Item1);
+            Assert.Equal(Convert.ToInt32(cordinates[1]), values.Item2);
         }
     }
 }

@@ -27,9 +27,9 @@ namespace CozumUnitTest
 
             Robot robot = _robotHelper.CreateRobot(xPosition, yPosition, direction);
 
-            Assert.Equal(robot.Direction, direction);
-            Assert.Equal(robot.xPosition, xPosition);
-            Assert.Equal(robot.yPosition, yPosition);
+            Assert.Equal(direction, robot.Direction);
+            Assert.Equal(xPosition, robot.xPosition);
+            Assert.Equal(yPosition, robot.yPosition);
         }
 
         [Theory]
@@ -44,7 +44,7 @@ namespace CozumUnitTest
                 yPosition = yPosition,
                 Direction = direction
             }, command);
-            Assert.Equal(robot.Direction, direction);
+            Assert.Equal(direction, robot.Direction);
 
         }
 
@@ -58,9 +58,9 @@ namespace CozumUnitTest
         {
             position = position.ToUpper().Replace(" ", "");
             Tuple<int, int, string> robotPosition = _robotHelper.GetRobotPosition(position);
-            Assert.Equal(robotPosition.Item1, Convert.ToInt32(position.Substring(0, 1)));
-            Assert.Equal(robotPosition.Item2, Convert.ToInt32(position.Substring(1, 1)));
-            Assert.Equal(robotPosition.Item3, position.Substring(2, 1));
+            Assert.Equal(Convert.ToInt32(position.Substring(0, 1)), robotPosition.Item1);
+            Assert.Equal(Convert.ToInt32(position.Substring(1, 1)), robotPosition.Item2);
+            Assert.Equal(position.Substring(2, 1), robotPosition.Item3);
         }
     }
 }
