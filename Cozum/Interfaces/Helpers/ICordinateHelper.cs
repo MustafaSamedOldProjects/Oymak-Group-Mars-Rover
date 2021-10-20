@@ -9,7 +9,7 @@ namespace Cozum.Interfaces.Helpers
 {
     public interface ICordinateHelper
     {
-        Tuple<int, int> GetValuesFromUserForCordinateSystem();
+        Tuple<int, int> GetValuesFromUserForCordinateSystem(string cordinateSystem);
         List<Cordinate> CreateCordinateSystem(int xLength, int yLength);
         void ShowCordinateSystemInConsole(List<Cordinate> rectangleCordinate);
     }

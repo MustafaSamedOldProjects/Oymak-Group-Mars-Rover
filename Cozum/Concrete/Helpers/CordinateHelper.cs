@@ -10,17 +10,11 @@ namespace Cozum.Concrete.Helpers
 {
     public class CordinateHelper : ICordinateHelper
     {
-        public Tuple<int, int> GetValuesFromUserForCordinateSystem()
+        public Tuple<int, int> GetValuesFromUserForCordinateSystem(string cordinateSystem)
         {
-            Console.WriteLine("Lütfen Bir Dikdörtgen Giriniz");
-
-            string input = Console.ReadLine();
-
-            string inputReadable = input.Replace(" ", "");
-
-
-            int xLength = Convert.ToInt32(inputReadable.Substring(0, 1));
-            int yLength = Convert.ToInt32(inputReadable.Substring(1, 1));
+            string[] cordinates = cordinateSystem.Trim().Split(" ");
+            int xLength = Convert.ToInt32(cordinates[0]);
+            int yLength = Convert.ToInt32(cordinates[1]);
 
             return Tuple.Create(xLength, yLength);
         }
